@@ -1,0 +1,88 @@
+<% flat = data.flats[owner] %>
+<div class="banner-sm" style="background-image: url(https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>);">
+</div>
+
+
+<div class="booking-container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="profile">
+        <div class="profile-left">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "avatar-lg" %>
+        <p class= "text-center"><%= flat.name %></p>
+        </div>
+        <div class="profile-right">
+          <h1><%= flat.description %></h1>
+          <p><%= flat.city_name %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <div class="booking-form">
+        <form action="">
+        <h2>Book this flat</h2>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <input type="text" id="checkin-date" placeholder="checkin" class="form-control">
+                <input type="text" id="checkout-date" placeholder="checkout" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <select name="" id="number-of-guests" class="form-control">
+                <option value="one-guest">1 guest</option>
+                <option value="two-guests">2 guests</option>
+                <option value="party">Party</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="btn btn-danger form-control">Book it</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blue-wrapper">
+  <div class="container">
+    <div class="text-top">
+      <h2>About this flat</h2>
+      <p><%= flat.description %></p>
+    </div>
+
+    <div class="text-stat-container">
+      <p>The Space</p>
+      <div class="stats-1">
+        <ul>
+          <li><span class="stat">Accomodates:</span> <strong><%= flat.accomodates %></strong></li>
+          <li><span class="stat">Bathrooms:</span> <strong><%= flat.bathrooms %></strong></li>
+          <li><span class="stat">Bed Type:</span> <strong><%= flat.bed_type %></strong></li>
+          <li><span class="stat">Bed Rooms:</span><strong><%= flat.bedrooms %></strong></li>
+        </ul>
+      </div>
+      <div></div>
+      <div class="stats-2">
+        <ul>
+          <li><span class="stat">Beds:</span> <strong><%= flat.beds %></strong></li>
+          <li><span class="stat">Property Type:</span> <strong><%= flat.property_type %></strong></li>
+          <li><span class="stat">Room Type:</span> <strong><%= flat.room_type %></strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="icon-amenities">
+      <ul>
+        <li>
+          <% if flat.wifi == true %>
+            <i class="fa fa-wifi">Wifi</i>
+            <% end %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
